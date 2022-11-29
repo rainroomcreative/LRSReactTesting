@@ -353,7 +353,7 @@
   color: #5a7184;
   font-size: 16px;
   line-height: 28px;
-  text-align: right;
+  text-align: left;
 }
 
 .body-text.white {
@@ -801,6 +801,7 @@
   flex: 1;
   border: 1px solid #d0d0d0;
   border-radius: 8px;
+  cursor: pointer;
 }
 
 .faq-filter.active {

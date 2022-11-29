@@ -1,0 +1,74 @@
+{
+  "items": [
+    {
+      "_archived": false,
+      "_draft": false,
+      "name": "Category Four",
+      "slug": "category-four",
+      "updated-on": "2022-11-29T22:06:43.810Z",
+      "updated-by": "Person_61d33432c8bd4135a9861eef",
+      "created-on": "2022-11-29T22:06:43.810Z",
+      "created-by": "Person_61d33432c8bd4135a9861eef",
+      "published-on": "2022-11-29T22:06:53.955Z",
+      "published-by": "Person_61d33432c8bd4135a9861eef",
+      "_cid": "635ac27fbbdc89294b5d0604",
+      "_id": "638682733eebc3fcd8b55deb"
+    },
+    {
+      "_archived": false,
+      "_draft": false,
+      "name": "Category Three",
+      "slug": "category-three",
+      "updated-on": "2022-11-29T23:33:14.482Z",
+      "updated-by": "Person_61d33432c8bd4135a9861eef",
+      "created-on": "2022-11-29T21:59:05.937Z",
+      "created-by": "Person_61d33432c8bd4135a9861eef",
+      "published-on": "2022-11-29T23:33:20.536Z",
+      "published-by": "Person_61d33432c8bd4135a9861eef",
+      "category-icon": {
+        "fileId": "638696b64639194c5f6d06a9",
+        "url": "https://uploads-ssl.webflow.com/635aae1aa4d6ed77019936ec/638696b64639194c5f6d06a9_shield.svg",
+        "alt": null
+      },
+      "_cid": "635ac27fbbdc89294b5d0604",
+      "_id": "638680a9b65921c59f264175"
+    },
+    {
+      "_archived": false,
+      "_draft": false,
+      "name": "Category Two",
+      "slug": "category-2",
+      "updated-on": "2022-11-29T21:45:58.734Z",
+      "updated-by": "Person_61d33432c8bd4135a9861eef",
+      "created-on": "2022-11-29T21:45:52.658Z",
+      "created-by": "Person_61d33432c8bd4135a9861eef",
+      "published-on": "2022-11-29T22:06:53.955Z",
+      "published-by": "Person_61d33432c8bd4135a9861eef",
+      "_cid": "635ac27fbbdc89294b5d0604",
+      "_id": "63867d9018ec056ccf3aeb44"
+    },
+    {
+      "_archived": false,
+      "_draft": false,
+      "name": "Category One",
+      "slug": "category-one",
+      "updated-on": "2022-11-29T23:30:46.878Z",
+      "updated-by": "Person_61d33432c8bd4135a9861eef",
+      "created-on": "2022-10-27T17:40:28.842Z",
+      "created-by": "Person_61d33432c8bd4135a9861eef",
+      "published-on": "2022-11-29T23:30:55.346Z",
+      "published-by": "Person_61d33432c8bd4135a9861eef",
+      "category-icon": {
+        "fileId": "6386962298dfbea070131d10",
+        "url": "https://uploads-ssl.webflow.com/635aae1aa4d6ed77019936ec/6386962298dfbea070131d10_ic_home2.svg",
+        "alt": null
+      },
+      "_cid": "635ac27fbbdc89294b5d0604",
+      "_id": "635ac28c8ccfe34bae11e595"
+    }
+  ],
+  "count": 4,
+  "limit": 100,
+  "offset": 0,
+  "total": 4
+}
