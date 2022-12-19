@@ -12,7 +12,7 @@ class FAQCategory extends React.Component {
   render() {
     return (
         <div className={this.props.selected ? "faq-filter active" : "faq-filter"} onClick={() => this.props.toggle(this.props.id)}>
-          <div class="faq-filter-content"><img src={this.props.iconURL ? this.props.iconURL : "images/desktop_windows.svg"} loading="lazy" alt="" class="faq-filter-icon" />
+          <div class="faq-filter-content"><img src={this.props.iconURL ? this.props.iconURL : "https://uploads-ssl.webflow.com/6329f15ce3fcda765d79a561/632a07c557473536c310b186_desktop_windows.svg"} loading="lazy" alt="" class="faq-filter-icon" />
             <h4 class="faq-filter-category">{this.props.name}</h4>
           </div>
         </div>
