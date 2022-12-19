@@ -52,7 +52,7 @@ class FAQItem extends React.Component {
     <div onClick={() => this.props.toggle(this.props.id)} class="faq-item faq-page opened" style={itemStyle}>
       <div class="category-tag">Category three</div>
       <div class="faq-question-wrap faq-page">
-        <div class="faq-question">{ this.props.question }</div><img style={iconStyle} src="images/add_circle_outline.svg" loading="lazy" alt="" class="faq-plus faq-page"/>
+        <div class="faq-question">{ this.props.question }</div><img style={iconStyle} src="https://uploads-ssl.webflow.com/6329f15ce3fcda765d79a561/632a25db3996e808b06c8a1d_add_circle_outline.svg" loading="lazy" alt="" class="faq-plus faq-page"/>
       </div>
       <div class="faq-answer-wrap" ref={ (answerDiv) => { this.answerDiv = answerDiv } }>
         <div ref={ (richTextDiv) => { this.richTextDiv = richTextDiv } } class="body-text w-richtext">
