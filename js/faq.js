@@ -121,11 +121,11 @@ class FAQ extends React.Component {
   }
 }
 
-fetch('./faq_items.json')
+fetch('https://rainroomcreative.github.io/LRSReactTesting/faq_items.json')
   .then(response => response.json())
   .then((json) => faq_data = json)
   .then(() => {
-    return fetch('./faq_categories.json')
+    return fetch('https://rainroomcreative.github.io/LRSReactTesting/faq_categories.json')
   })
   .then((response) => response.json())
   .then((json) => faq_data.categories = json)
