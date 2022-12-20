@@ -14,14 +14,20 @@ const CLASS_OPTIONS = {
 }
 
 const modalSlidesContent = {
-  nevada_traffic_school_for_court: {
-    title: "Nevada Traffic School for Court",
-    description: "This is a 5-hour Nevada DMV approved course. In this class you will learn safe driving practices to help you become a more responsible, aware, and safer driver. If you are taking this class as part of a deal with the court to reduce your charge, this is the correct class for you. If you are taking this class to reduce points already on your license with the DMV, you should take the Nevada Traffic School for NV DMV class.",
-    price: "$19.99",
-    learningMethods: [CLASS_OPTIONS.online, CLASS_OPTIONS.inPerson, CLASS_OPTIONS.hybrid],
-    paymentMethods: [PAYMENT.now, PAYMENT.later],
-  }  
+  courses: [
+    {
+      title: "Nevada Traffic School for Court",
+      description: "This is a 5-hour Nevada DMV approved course. In this class you will learn safe driving practices to help you become a more responsible, aware, and safer driver. If you are taking this class as part of a deal with the court to reduce your charge, this is the correct class for you. If you are taking this class to reduce points already on your license with the DMV, you should take the Nevada Traffic School for NV DMV class.",
+      price: "$19.99",
+      learningMethods: [CLASS_OPTIONS.online, CLASS_OPTIONS.inPerson, CLASS_OPTIONS.hybrid],
+      paymentMethods: [PAYMENT.now, PAYMENT.later],
+    }  
+  ]
+  
 }
+
+const modalRootEl = document.getElementById('modal-container');
+
 
 class ProgressBar extends React.Component {
   constructor(props){
@@ -425,13 +431,22 @@ class Modal extends React.Component {
   constructor(props) {
     super(props);
     this.state = { 
-      chosenCourse: modalSlidesContent["nevada_traffic_school_for_court"],
       learningMethod: "",
       paymentMethod: "",
       step: 1, 
      };
      var progressSlide = this.progressSlide.bind(this);
+     this.el = document.createElement('div');
   
+    }
+
+    componentDidMount(){
+      this.el.classList.add("fullscreen-modal")
+      modalRootEl.appendChild(this.el);
+    }
+
+    componentWillUnmount() {
+      modalRootEl.removeChild(this.el);
     }
 
   progressSlide = (option, path) => {
@@ -454,96 +469,195 @@ class Modal extends React.Component {
 
 
   render() {
-
-    switch(this.state.step){
-      case 1: 
-        return <CourseDescriptionSlide 
-          progressSlide={this.progressSlide} 
-          content={this.state.chosenCourse}
-          currentSlide={this.state.step}
-          maxSlides={5}
-        />;
-      case 2: 
-        return <CourseOptionsSlide
-          progressSlide={this.progressSlide}
-          prevSlide={this.prevSlide}
-          content={this.state.chosenCourse}
-          currentSlide={this.state.step}
-          maxSlides={5}
-        />;
-      case 3:
-        if(this.state.learningMethod === CLASS_OPTIONS.online){
-          return <PaymentOptionsSlide
+    var selectedCourse = modalSlidesContent.courses[this.props.selectedCourseIndex];
+    // if (this.props.modalIsOpen){
+      var chosenSlide; 
+      switch(this.state.step){
+        case 1: 
+          chosenSlide = <CourseDescriptionSlide 
+            progressSlide={this.progressSlide} 
+            content={selectedCourse}
+            currentSlide={this.state.step}
+            maxSlides={5} 
+          />;
+          break;
+        case 2: 
+          chosenSlide = <CourseOptionsSlide
             progressSlide={this.progressSlide}
             prevSlide={this.prevSlide}
-            content={this.state.chosenCourse}
+            content={selectedCourse}
             currentSlide={this.state.step}
             maxSlides={5}
-
           />;
-        } else {
-          return <LiveClassSlide
-            progressSlide={this.progressSlide}
-            prevSlide={this.prevSlide}
-            content={this.state.chosenCourse}
+          break;
+        case 3:
+          if(this.state.learningMethod === CLASS_OPTIONS.online){
+            chosenSlide =  <PaymentOptionsSlide
+              progressSlide={this.progressSlide}
+              prevSlide={this.prevSlide}
+              content={selectedCourse}
+              currentSlide={this.state.step}
+              maxSlides={5}
+  
+            />;
+          break;
+
+          } else {
+            chosenSlide =  <LiveClassSlide
+              progressSlide={this.progressSlide}
+              prevSlide={this.prevSlide}
+              content={selectedCourse}
+              currentSlide={this.state.step}
+              maxSlides={5}
+  
+            />;
+          break;
+
+          }
+        case 4:
+          let slides = 5;
+          if(this.state.paymentMethod === PAYMENT.now){
+            slides = 6;
+          }
+          chosenSlide =  <CreateAccountSlide
+              prevSlide={this.prevSlide}
+              progressSlide={this.progressSlide}
+              content={selectedCourse}
+              paymentMethod={this.state.paymentMethod}
+              currentSlide={this.state.step}
+              maxSlides={slides}
+  
+            />;
+          break;
+
+        case 5:
+          if(this.state.paymentMethod === PAYMENT.now){
+            chosenSlide =  <BillingInfoSlide 
+              prevSlide={this.prevSlide}
+              content={selectedCourse}
+              progressSlide={this.progressSlide}
+              currentSlide={this.state.step}
+              maxSlides={6}
+  
+            />;
+          break;
+
+          } else if(this.state.paymentMethod === PAYMENT.later){
+            chosenSlide =  <SuccessSlide/>;
+          break;
+
+          }
+        case 6:
+          if(this.state.paymentMethod === PAYMENT.now){
+            chosenSlide =  <BillingSlide
+              prevSlide={this.prevSlide}
+              content={selectedCourse}
+              progressSlide={this.progressSlide}
+              currentSlide={this.state.step}
+              maxSlides={6}
+            />;
+          break;
+
+          }
+        case 7:
+          chosenSlide =  <SuccessSlide/>;
+          break;
+
+        default:
+          chosenSlide = <CourseDescriptionSlide 
+            progressSlide={this.progressSlide} 
+            content={selectedCourse}
             currentSlide={this.state.step}
             maxSlides={5}
-
           />;
-        }
-      case 4:
-        let slides = 5;
-        if(this.state.paymentMethod === PAYMENT.now){
-          slides = 6;
-        }
-          return <CreateAccountSlide
-            prevSlide={this.prevSlide}
-            progressSlide={this.progressSlide}
-            content={this.state.chosenCourse}
-            paymentMethod={this.state.paymentMethod}
-            currentSlide={this.state.step}
-            maxSlides={slides}
-
-          />;
-      case 5:
-        if(this.state.paymentMethod === PAYMENT.now){
-          return <BillingInfoSlide 
-            prevSlide={this.prevSlide}
-            content={this.state.chosenCourse}
-            progressSlide={this.progressSlide}
-            currentSlide={this.state.step}
-            maxSlides={6}
-
-          />;
-        } else if(this.state.paymentMethod === PAYMENT.later){
-          return <SuccessSlide/>;
-        }
-      case 6:
-        if(this.state.paymentMethod === PAYMENT.now){
-          return <BillingSlide
-            prevSlide={this.prevSlide}
-            content={this.state.chosenCourse}
-            progressSlide={this.progressSlide}
-            currentSlide={this.state.step}
-            maxSlides={6}
-          />;
-        }
-      case 7:
-        return <SuccessSlide />;
-      default:
-    }
-    return (
-      <div className="fullscreen-modal">
-        {this.state.modalMap[this.state.step]}
-      </div>
-    );
+      }
+      
+    // }
+    return ( ReactDOM.createPortal( chosenSlide, this.el))
   }
 }
 
+class ClassListItem extends React.Component {
+  constructor(props) {
+    super(props);
+    
+    }
 
-const domContainer = document.querySelector('#modal-container');
+    render(){
+      var toggleModal = this.props.toggleModal;
+
+      return (
+        <div class="course-list-item">
+              <div class="course-list-name">
+                <h3 class="course-header black">{this.props.course.title}</h3>
+              </div>
+              <div class="course-list-price">
+                <h3 class="course-header black bold">{this.props.course.price}</h3>
+              </div>
+              <div class="course-list-button-wrap">
+                <div onClick={() => toggleModal()} class="button course-list w-button">Start</div>
+              </div>
+            </div>
+      )
+    }
+  }
+
+class ClassList extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { 
+      modalIsOpen: false, 
+      selectedCourseIndex: 0,
+      };
+    }
+
+    toggleModal = (courseIndex) => {
+      this.setState({modalIsOpen: !this.state.modalIsOpen});
+      if(courseIndex !== undefined){
+        this.setState({selectedCourseIndex: courseIndex});
+      }
+      console.log(`MODAL IS OPEN: ${this.state.modalIsOpen}`)
+    }
+
+    render() {
+      return (
+        <div className="all-courses-section">
+          {/* <div id="modal-container">
+            <Modal modalIsOpen={this.state.modalIsOpen} selectedCourseIndex={this.state.selectedCourseIndex}></Modal>
+          </div> */}
+          <div class="banner-image">
+            <div class="gradient-cover"></div>
+          </div>
+          <div class="title-wrap">
+            <h1 class="h1"><span class="bold-caps">Legal Rehab Services<br/>‍</span>Online Court Education</h1>
+          </div>
+          <div class="course-list-wrap">
+            <h2 class="course-list-title">Start a new class</h2>
+            <div class="course-list-item header">
+              <div class="course-list-name">
+                <h3 class="course-header">COURSE NAME</h3>
+              </div>
+              <div class="course-list-price">
+                <h3 class="course-header">PRICE</h3>
+              </div>
+            </div>
+            { modalSlidesContent.courses.map ( (course, index) => {
+              return <ClassListItem course={course} key={index} toggleModal={this.toggleModal}/>
+            })}
+          </div>
+          
+          <Modal selectedCourseIndex={this.state.selectedCourseIndex}></Modal>
+        </div>
+        
+        
+      )
+    }
+}
+
+
+const domContainer = document.querySelector('#class-list');
 const root = ReactDOM.createRoot(domContainer);
-root.render(e(Modal));
+root.render(e(ClassList));
 
 
 
