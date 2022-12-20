@@ -61,7 +61,7 @@ class CourseDescriptionSlide extends React.Component {
 
     return (
         <div className="modal-wrap">
-          <div className="close-button"><img src="images/ep_close-bold.svg" loading="lazy" alt=""/></div>
+          <div onClick={() => this.props.toggleModal()} className="close-button"><img src="images/ep_close-bold.svg" loading="lazy" alt=""/></div>
           <div className="modal-info">
             <h3 className="modal-heading">{this.props.content.title}</h3>
             <h4 className="modal-subheading">Details</h4>
@@ -112,7 +112,7 @@ class CourseOptionsSlide extends React.Component {
           <div className="previous-button" onClick={this.props.prevSlide}><img src="images/Arrow.svg" loading="lazy" alt=""/>
             <div className="text-block-4">Previous</div>
           </div>
-          <div className="close-button"><img src="images/ep_close-bold.svg" loading="lazy" alt=""/></div>
+          <div onClick={() => this.props.toggleModal()} className="close-button"><img src="images/ep_close-bold.svg" loading="lazy" alt=""/></div>
           <div className="modal-info">
             <h3 className="modal-heading">Choose Your Learning Style</h3>
             <h4 className="modal-subheading">{this.props.content.title}</h4>
@@ -162,7 +162,7 @@ class PaymentOptionsSlide extends React.Component {
           <div className="previous-button" onClick={this.props.prevSlide}><img src="images/Arrow.svg" loading="lazy" alt=""/>
             <div className="text-block-4">Previous</div>
           </div>
-          <div className="close-button"><img src="images/ep_close-bold.svg" loading="lazy" alt=""/></div>
+          <div onClick={() => this.props.toggleModal()} className="close-button"><img src="images/ep_close-bold.svg" loading="lazy" alt=""/></div>
           <div className="modal-info">
             <h3 className="modal-heading">How would you like to start?</h3>
             <h4 className="modal-subheading">{this.props.content.title}</h4>
@@ -193,7 +193,7 @@ class LiveClassSlide extends React.Component {
       <div className="previous-button" onClick={this.props.prevSlide}><img src="images/Arrow.svg" loading="lazy" alt=""/>
         <div className="text-block-4">Previous</div>
       </div>
-      <div className="close-button"><img src="images/ep_close-bold.svg" loading="lazy" alt=""/></div>
+      <div onClick={() => this.props.toggleModal()} className="close-button"><img src="images/ep_close-bold.svg" loading="lazy" alt=""/></div>
       <div className="modal-info">
         <h3 className="modal-heading">Live / Hybrid Class Info</h3>
         <h4 className="modal-subheading">Course Name</h4>
@@ -256,7 +256,7 @@ class CreateAccountSlide extends React.Component {
         <div className="previous-button" onClick={this.props.prevSlide}><img src="images/Arrow.svg" loading="lazy" alt=""/>
           <div className="text-block-4">Previous</div>
         </div>
-        <div className="close-button"><img src="images/ep_close-bold.svg" loading="lazy" alt=""/></div>
+        <div onClick={() => this.props.toggleModal()} className="close-button"><img src="images/ep_close-bold.svg" loading="lazy" alt=""/></div>
         <div className="modal-info">
           <h3 className="modal-heading">Create your LRS Account</h3>
         </div>
@@ -299,7 +299,7 @@ class BillingInfoSlide extends React.Component {
       <div className="previous-button" onClick={this.props.prevSlide}><img src="images/Arrow.svg" loading="lazy" alt=""/>
         <div className="text-block-4">Previous</div>
       </div>
-      <div className="close-button"><img src="images/ep_close-bold.svg" loading="lazy" alt=""/></div>
+      <div onClick={() => this.props.toggleModal()} className="close-button"><img src="images/ep_close-bold.svg" loading="lazy" alt=""/></div>
       <div className="modal-info">
         <h3 className="modal-heading">Complete Course Payment</h3>
         <h4 className="modal-subheading">{this.props.content.title}</h4>
@@ -361,7 +361,7 @@ class BillingSlide extends React.Component {
       <div className="previous-button"><img src="images/Arrow.svg" loading="lazy" alt=""/>
         <div className="text-block-4">Previous</div>
       </div>
-      <div className="close-button"><img src="images/ep_close-bold.svg" loading="lazy" alt=""/></div>
+      <div onClick={() => this.props.toggleModal()} className="close-button"><img src="images/ep_close-bold.svg" loading="lazy" alt=""/></div>
       <div className="modal-info">
         <h3 className="modal-heading">Payment Method</h3>
         <h4 className="modal-subheading">{this.props.content.title}</h4>
@@ -470,6 +470,7 @@ class Modal extends React.Component {
 
   render() {
     var selectedCourse = modalSlidesContent.courses[this.props.selectedCourseIndex];
+    var toggleModal = this.props.toggleModal
     // if (this.props.modalIsOpen){
       var chosenSlide; 
       switch(this.state.step){
@@ -479,6 +480,7 @@ class Modal extends React.Component {
             content={selectedCourse}
             currentSlide={this.state.step}
             maxSlides={5} 
+            toggleModal={toggleModal}
           />;
           break;
         case 2: 
@@ -488,6 +490,8 @@ class Modal extends React.Component {
             content={selectedCourse}
             currentSlide={this.state.step}
             maxSlides={5}
+            toggleModal={toggleModal}
+
           />;
           break;
         case 3:
@@ -498,6 +502,7 @@ class Modal extends React.Component {
               content={selectedCourse}
               currentSlide={this.state.step}
               maxSlides={5}
+              toggleModal={toggleModal}
   
             />;
           break;
@@ -509,6 +514,7 @@ class Modal extends React.Component {
               content={selectedCourse}
               currentSlide={this.state.step}
               maxSlides={5}
+              toggleModal={toggleModal}
   
             />;
           break;
@@ -526,6 +532,7 @@ class Modal extends React.Component {
               paymentMethod={this.state.paymentMethod}
               currentSlide={this.state.step}
               maxSlides={slides}
+              toggleModal={toggleModal}
   
             />;
           break;
@@ -538,6 +545,7 @@ class Modal extends React.Component {
               progressSlide={this.progressSlide}
               currentSlide={this.state.step}
               maxSlides={6}
+              toggleModal={toggleModal}
   
             />;
           break;
@@ -555,6 +563,8 @@ class Modal extends React.Component {
               progressSlide={this.progressSlide}
               currentSlide={this.state.step}
               maxSlides={6}
+            toggleModal={toggleModal}
+
             />;
           break;
 
@@ -569,6 +579,8 @@ class Modal extends React.Component {
             content={selectedCourse}
             currentSlide={this.state.step}
             maxSlides={5}
+            toggleModal={toggleModal}
+
           />;
       }
       
@@ -620,6 +632,13 @@ class ClassList extends React.Component {
     }
 
     render() {
+      let modal;
+      if(this.state.modalIsOpen){
+        modal = <Modal modalIsOpen={this.state.modalIsOpen} selectedCourseIndex={this.state.selectedCourseIndex} toggleModal={this.toggleModal}></Modal>
+      } else {
+        modal = <div></div>
+      }
+
       return (
         <div className="all-courses-section">
           {/* <div id="modal-container">
@@ -645,8 +664,8 @@ class ClassList extends React.Component {
               return <ClassListItem course={course} key={index} toggleModal={this.toggleModal}/>
             })}
           </div>
-          
-          <Modal selectedCourseIndex={this.state.selectedCourseIndex}></Modal>
+          {/* <Modal selectedCourseIndex={this.state.selectedCourseIndex}></Modal> */}
+          { modal }
         </div>
         
         
