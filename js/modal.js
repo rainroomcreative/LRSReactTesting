@@ -607,7 +607,7 @@ class ClassListItem extends React.Component {
                 <h3 class="course-header black bold">{this.props.course.price}</h3>
               </div>
               <div class="course-list-button-wrap">
-                <div onClick={() => toggleModal(this.props.key)} class="button course-list w-button">Start</div>
+                <div onClick={() => toggleModal(this.props.courseIndex)} class="button course-list w-button">Start</div>
               </div>
             </div>
       )
@@ -662,7 +662,7 @@ class ClassList extends React.Component {
               </div>
             </div>
             { modalSlidesContent.courses.map ( (course, index) => {
-              return <ClassListItem course={course} key={index} toggleModal={this.toggleModal}/>
+              return <ClassListItem course={course} key={index} courseIndex={index} toggleModal={this.toggleModal}/>
             })}
           </div>
           {/* <Modal selectedCourseIndex={this.state.selectedCourseIndex}></Modal> */}
