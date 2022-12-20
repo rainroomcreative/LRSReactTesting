@@ -2,16 +2,16 @@
 'use strict';
 
 const e = React.createElement;
-const PAYMENT = {
-  later: 'pay-later',
-  now: 'pay-now'
-}
+// const PAYMENT = {
+//   later: 'pay-later',
+//   now: 'pay-now'
+// }
 
-const CLASS_OPTIONS = {
-  online: 'online',
-  inPerson: 'in-person',
-  hybrid: 'hybrid',
-}
+// const CLASS_OPTIONS = {
+//   online: 'online',
+//   inPerson: 'in-person',
+//   hybrid: 'hybrid',
+// }
 
 // const modalSlidesContent = {
 //   courses: [
