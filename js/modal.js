@@ -607,7 +607,7 @@ class ClassListItem extends React.Component {
                 <h3 class="course-header black bold">{this.props.course.price}</h3>
               </div>
               <div class="course-list-button-wrap">
-                <div onClick={() => toggleModal()} class="button course-list w-button">Start</div>
+                <div onClick={() => toggleModal(this.props.key)} class="button course-list w-button">Start</div>
               </div>
             </div>
       )
