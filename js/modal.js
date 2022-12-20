@@ -626,6 +626,7 @@ class ClassList extends React.Component {
     toggleModal = (courseIndex) => {
       this.setState({modalIsOpen: !this.state.modalIsOpen});
       if(courseIndex !== undefined){
+        console.log(`SELECTED COURSE INDEX: ${courseIndex}`)
         this.setState({selectedCourseIndex: courseIndex});
       }
       console.log(`MODAL IS OPEN: ${this.state.modalIsOpen}`)
