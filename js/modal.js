@@ -13,18 +13,18 @@ const CLASS_OPTIONS = {
   hybrid: 'hybrid',
 }
 
-const modalSlidesContent = {
-  courses: [
-    {
-      title: "Nevada Traffic School for Court",
-      description: "This is a 5-hour Nevada DMV approved course. In this class you will learn safe driving practices to help you become a more responsible, aware, and safer driver. If you are taking this class as part of a deal with the court to reduce your charge, this is the correct class for you. If you are taking this class to reduce points already on your license with the DMV, you should take the Nevada Traffic School for NV DMV class.",
-      price: "$19.99",
-      learningMethods: [CLASS_OPTIONS.online, CLASS_OPTIONS.inPerson, CLASS_OPTIONS.hybrid],
-      paymentMethods: [PAYMENT.now, PAYMENT.later],
-    }  
-  ]
+// const modalSlidesContent = {
+//   courses: [
+//     {
+//       title: "Nevada Traffic School for Court",
+//       description: "This is a 5-hour Nevada DMV approved course. In this class you will learn safe driving practices to help you become a more responsible, aware, and safer driver. If you are taking this class as part of a deal with the court to reduce your charge, this is the correct class for you. If you are taking this class to reduce points already on your license with the DMV, you should take the Nevada Traffic School for NV DMV class.",
+//       price: "$19.99",
+//       learningMethods: [CLASS_OPTIONS.online, CLASS_OPTIONS.inPerson, CLASS_OPTIONS.hybrid],
+//       paymentMethods: [PAYMENT.now, PAYMENT.later],
+//     }  
+//   ]
   
-}
+// }
 
 const modalRootEl = document.getElementById('modal-container');
 
