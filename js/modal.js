@@ -61,7 +61,7 @@ class CourseDescriptionSlide extends React.Component {
 
     return (
         <div className="modal-wrap">
-          <div onClick={() => this.props.toggleModal()} className="close-button"><img src="images/ep_close-bold.svg" loading="lazy" alt=""/></div>
+          <div onClick={() => this.props.toggleModal()} className="close-button"><img src="https://uploads-ssl.webflow.com/6329f15ce3fcda765d79a561/6335d72b19b69d9c88813a6e_ep_close-bold.svg" loading="lazy" alt=""/></div>
           <div className="modal-info">
             <h3 className="modal-heading">{this.props.content.title}</h3>
             <h4 className="modal-subheading">Details</h4>
@@ -89,19 +89,19 @@ class CourseOptionsSlide extends React.Component {
     var inPerson;
     var progressSlide = this.props.progressSlide;
     if(this.props.content.learningMethods.includes(CLASS_OPTIONS.online)){
-      online = (<div onClick={() => progressSlide("learning-method", CLASS_OPTIONS.online)} className="modal-choice-block highlighted"><img src="../images/noun-phone-2173681-1.svg" loading="lazy" alt="" className="modal-icon"/>
+      online = (<div onClick={() => progressSlide("learning-method", CLASS_OPTIONS.online)} className="modal-choice-block highlighted"><img src="https://uploads-ssl.webflow.com/6329f15ce3fcda765d79a561/6335e8052413622cd7000c13_noun-phone-2173681%201.svg" loading="lazy" alt="" className="modal-icon"/>
                 <h4 className="modal-subheading block">Online</h4>
               </div>);
     }
 
     if(this.props.content.learningMethods.includes(CLASS_OPTIONS.hybrid)){
-      hybrid = (<div onClick={() => progressSlide("learning-method", CLASS_OPTIONS.hybrid)} className="modal-choice-block"><img src="images/zoom-icon.svg" loading="lazy" alt="" className="modal-icon"/>
+      hybrid = (<div onClick={() => progressSlide("learning-method", CLASS_OPTIONS.hybrid)} className="modal-choice-block"><img src="https://uploads-ssl.webflow.com/6329f15ce3fcda765d79a561/6335e4fcd70591823dd3464d_zoom-icon.svg" loading="lazy" alt="" className="modal-icon"/>
                   <h4 className="modal-subheading block">Hybrid/Zoom</h4>
                 </div>);
     }
 
     if(this.props.content.learningMethods.includes(CLASS_OPTIONS.inPerson)){
-      inPerson = (<div onClick={() => progressSlide("learning-method", CLASS_OPTIONS.inPerson)} className="modal-choice-block"><img src="images/live-icon.svg" loading="lazy" alt="" className="modal-icon"/>
+      inPerson = (<div onClick={() => progressSlide("learning-method", CLASS_OPTIONS.inPerson)} className="modal-choice-block"><img src="https://uploads-ssl.webflow.com/6329f15ce3fcda765d79a561/6335e931e51a8db6febf95e9_live-icon.svg" loading="lazy" alt="" className="modal-icon"/>
                     <h4 className="modal-subheading block">Live</h4>
                   </div>)
     }
@@ -109,10 +109,10 @@ class CourseOptionsSlide extends React.Component {
 
     return (
         <div className="modal-wrap">
-          <div className="previous-button" onClick={this.props.prevSlide}><img src="images/Arrow.svg" loading="lazy" alt=""/>
+          <div className="previous-button" onClick={this.props.prevSlide}><img src="https://uploads-ssl.webflow.com/6329f15ce3fcda765d79a561/6335d41df17d454d37c5d5de_Arrow.svg" loading="lazy" alt=""/>
             <div className="text-block-4">Previous</div>
           </div>
-          <div onClick={() => this.props.toggleModal()} className="close-button"><img src="images/ep_close-bold.svg" loading="lazy" alt=""/></div>
+          <div onClick={() => this.props.toggleModal()} className="close-button"><img src="https://uploads-ssl.webflow.com/6329f15ce3fcda765d79a561/6335d72b19b69d9c88813a6e_ep_close-bold.svg" loading="lazy" alt=""/></div>
           <div className="modal-info">
             <h3 className="modal-heading">Choose Your Learning Style</h3>
             <h4 className="modal-subheading">{this.props.content.title}</h4>
@@ -145,13 +145,13 @@ class PaymentOptionsSlide extends React.Component {
     var progressSlide = this.props.progressSlide;
 
     if(this.props.content.paymentMethods.includes(PAYMENT.now)){
-      payUpFront = (<div onClick={() => progressSlide("payment-method", PAYMENT.now)} className="modal-choice-block"><img src="images/noun-credit-card-4148267-1.svg" loading="lazy" alt="" className="modal-icon"/>
+      payUpFront = (<div onClick={() => progressSlide("payment-method", PAYMENT.now)} className="modal-choice-block"><img src="https://uploads-ssl.webflow.com/6329f15ce3fcda765d79a561/6335f24757ea24349b482b0d_noun-credit-card-4148267%201.svg" loading="lazy" alt="" className="modal-icon"/>
                       <h4 className="modal-subheading block">Pay for Class Up-front</h4>
                     </div>);
     }
 
     if(this.props.content.paymentMethods.includes(PAYMENT.later)){
-      payLater = (<div onClick={() => progressSlide("payment-method", PAYMENT.later)} className="modal-choice-block"><img src="images/noun-unlock-588454-1.svg" loading="lazy" alt="" className="modal-icon"/>
+      payLater = (<div onClick={() => progressSlide("payment-method", PAYMENT.later)} className="modal-choice-block"><img src="https://uploads-ssl.webflow.com/6329f15ce3fcda765d79a561/6335f243ec131cb2414f0b94_noun-unlock-588454%201.svg" loading="lazy" alt="" className="modal-icon"/>
                   <h4 className="modal-subheading block">Sign Up &amp; Start for Free</h4>
                 </div>);
     }
@@ -159,10 +159,10 @@ class PaymentOptionsSlide extends React.Component {
 
     return (
         <div className="modal-wrap">
-          <div className="previous-button" onClick={this.props.prevSlide}><img src="images/Arrow.svg" loading="lazy" alt=""/>
+          <div className="previous-button" onClick={this.props.prevSlide}><img src="https://uploads-ssl.webflow.com/6329f15ce3fcda765d79a561/6335d41df17d454d37c5d5de_Arrow.svg" loading="lazy" alt=""/>
             <div className="text-block-4">Previous</div>
           </div>
-          <div onClick={() => this.props.toggleModal()} className="close-button"><img src="images/ep_close-bold.svg" loading="lazy" alt=""/></div>
+          <div onClick={() => this.props.toggleModal()} className="close-button"><img src="https://uploads-ssl.webflow.com/6329f15ce3fcda765d79a561/6335d72b19b69d9c88813a6e_ep_close-bold.svg" loading="lazy" alt=""/></div>
           <div className="modal-info">
             <h3 className="modal-heading">How would you like to start?</h3>
             <h4 className="modal-subheading">{this.props.content.title}</h4>
@@ -190,10 +190,10 @@ class LiveClassSlide extends React.Component {
   render() {
     return (
     <div className="modal-wrap">
-      <div className="previous-button" onClick={this.props.prevSlide}><img src="images/Arrow.svg" loading="lazy" alt=""/>
+      <div className="previous-button" onClick={this.props.prevSlide}><img src="https://uploads-ssl.webflow.com/6329f15ce3fcda765d79a561/6335d41df17d454d37c5d5de_Arrow.svg" loading="lazy" alt=""/>
         <div className="text-block-4">Previous</div>
       </div>
-      <div onClick={() => this.props.toggleModal()} className="close-button"><img src="images/ep_close-bold.svg" loading="lazy" alt=""/></div>
+      <div onClick={() => this.props.toggleModal()} className="close-button"><img src="https://uploads-ssl.webflow.com/6329f15ce3fcda765d79a561/6335d72b19b69d9c88813a6e_ep_close-bold.svg" loading="lazy" alt=""/></div>
       <div className="modal-info">
         <h3 className="modal-heading">Live / Hybrid Class Info</h3>
         <h4 className="modal-subheading">Course Name</h4>
@@ -253,10 +253,10 @@ class CreateAccountSlide extends React.Component {
 
     return (
       <div className="modal-wrap">
-        <div className="previous-button" onClick={this.props.prevSlide}><img src="images/Arrow.svg" loading="lazy" alt=""/>
+        <div className="previous-button" onClick={this.props.prevSlide}><img src="https://uploads-ssl.webflow.com/6329f15ce3fcda765d79a561/6335d41df17d454d37c5d5de_Arrow.svg" loading="lazy" alt=""/>
           <div className="text-block-4">Previous</div>
         </div>
-        <div onClick={() => this.props.toggleModal()} className="close-button"><img src="images/ep_close-bold.svg" loading="lazy" alt=""/></div>
+        <div onClick={() => this.props.toggleModal()} className="close-button"><img src="https://uploads-ssl.webflow.com/6329f15ce3fcda765d79a561/6335d72b19b69d9c88813a6e_ep_close-bold.svg" loading="lazy" alt=""/></div>
         <div className="modal-info">
           <h3 className="modal-heading">Create your LRS Account</h3>
         </div>
@@ -296,10 +296,10 @@ class BillingInfoSlide extends React.Component {
 
     return(
       <div className="modal-wrap">
-      <div className="previous-button" onClick={this.props.prevSlide}><img src="images/Arrow.svg" loading="lazy" alt=""/>
+      <div className="previous-button" onClick={this.props.prevSlide}><img src="https://uploads-ssl.webflow.com/6329f15ce3fcda765d79a561/6335d41df17d454d37c5d5de_Arrow.svg" loading="lazy" alt=""/>
         <div className="text-block-4">Previous</div>
       </div>
-      <div onClick={() => this.props.toggleModal()} className="close-button"><img src="images/ep_close-bold.svg" loading="lazy" alt=""/></div>
+      <div onClick={() => this.props.toggleModal()} className="close-button"><img src="https://uploads-ssl.webflow.com/6329f15ce3fcda765d79a561/6335d72b19b69d9c88813a6e_ep_close-bold.svg" loading="lazy" alt=""/></div>
       <div className="modal-info">
         <h3 className="modal-heading">Complete Course Payment</h3>
         <h4 className="modal-subheading">{this.props.content.title}</h4>
@@ -358,10 +358,10 @@ class BillingSlide extends React.Component {
 
     return (
       <div className="modal-wrap">
-      <div className="previous-button"><img src="images/Arrow.svg" loading="lazy" alt=""/>
+      <div className="previous-button"><img src="https://uploads-ssl.webflow.com/6329f15ce3fcda765d79a561/6335d41df17d454d37c5d5de_Arrow.svg" loading="lazy" alt=""/>
         <div className="text-block-4">Previous</div>
       </div>
-      <div onClick={() => this.props.toggleModal()} className="close-button"><img src="images/ep_close-bold.svg" loading="lazy" alt=""/></div>
+      <div onClick={() => this.props.toggleModal()} className="close-button"><img src="https://uploads-ssl.webflow.com/6329f15ce3fcda765d79a561/6335d72b19b69d9c88813a6e_ep_close-bold.svg" loading="lazy" alt=""/></div>
       <div className="modal-info">
         <h3 className="modal-heading">Payment Method</h3>
         <h4 className="modal-subheading">{this.props.content.title}</h4>
